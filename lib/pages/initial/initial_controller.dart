@@ -3,7 +3,29 @@ import 'package:travel_app/domain/enums/travel_list_enum.dart';
 import 'package:travel_app/domain/models/card_model.dart';
 
 class InitialController extends GetxController {
-  List<CardModel> cardList = [];
+  List<CardModel> planeList = [
+    CardModel(
+        localImage: 'assets/paris2.jpg', localName: 'Paris', price: '1500'),
+    CardModel(
+        localImage: 'assets/paris.jpg', localName: 'Paris', price: '1500'),
+    CardModel(
+        localImage: 'assets/paris2.jpg', localName: 'Paris', price: '1500'),
+    CardModel(
+        localImage: 'assets/paris2.jpg', localName: 'Paris', price: '1500'),
+  ];
+
+  List<CardModel> busList = [
+    CardModel(
+        localImage: 'assets/paris2.jpg', localName: 'Paris', price: '200'),
+  ];
+  List<CardModel> trainList = [
+    CardModel(
+        localImage: 'assets/paris2.jpg', localName: 'Paris', price: '300'),
+  ];
+  List<CardModel> shipList = [
+    CardModel(
+        localImage: 'assets/paris2.jpg', localName: 'Paris', price: '500'),
+  ];
 
   final Rx<TravelListEnum> _activeList =
       Rx<TravelListEnum>(TravelListEnum.plane);

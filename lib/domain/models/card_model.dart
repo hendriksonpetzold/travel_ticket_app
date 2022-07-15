@@ -1,10 +1,10 @@
 class CardModel {
-  String image;
-  String local;
+  String localImage;
+  String localName;
   String price;
   CardModel({
-    required this.image,
-    required this.local,
+    required this.localImage,
+    required this.localName,
     required this.price,
   });
 }
