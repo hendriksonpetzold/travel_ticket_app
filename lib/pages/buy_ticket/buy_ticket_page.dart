@@ -45,9 +45,8 @@ class BuyTicketPage extends StatelessWidget {
                 ),
               ),
               child: Column(
-                children: [
-                  const TicketCard(),
-                  Text(controller.price),
+                children: const [
+                  TicketCard(),
                 ],
               ),
             ),
