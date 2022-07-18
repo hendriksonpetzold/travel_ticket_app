@@ -3,7 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:travel_app/domain/utils/my_custom_cilp_path.dart';
 
 class TicketCard extends StatelessWidget {
-  const TicketCard({Key? key}) : super(key: key);
+  final String destiny;
+  final String price;
+  const TicketCard({Key? key, required this.destiny, required this.price})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -76,7 +79,7 @@ class TicketCard extends StatelessWidget {
                   ),
                   Expanded(
                     child: Text(
-                      'Brasil',
+                      destiny,
                       textAlign: TextAlign.end,
                       style: TextStyle(color: Colors.grey[700]),
                     ),
@@ -149,15 +152,15 @@ class TicketCard extends StatelessWidget {
               height: 32,
             ),
             Row(
-              children: const [
-                Expanded(
+              children: [
+                const Expanded(
                   child: Text('American AirLiness'),
                 ),
                 Expanded(
                   child: Text(
-                    '\$120',
+                    price,
                     textAlign: TextAlign.end,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontWeight: FontWeight.bold,
                     ),
                   ),

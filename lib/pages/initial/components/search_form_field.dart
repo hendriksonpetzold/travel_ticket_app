@@ -7,7 +7,7 @@ class SearchFormField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       decoration: InputDecoration(
-        label: const Text('Pesquisar'),
+        hintText: 'Pesquisar',
         isDense: true,
         fillColor: Colors.grey[300],
         filled: true,

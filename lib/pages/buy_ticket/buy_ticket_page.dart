@@ -45,8 +45,11 @@ class BuyTicketPage extends StatelessWidget {
                 ),
               ),
               child: Column(
-                children: const [
-                  TicketCard(),
+                children: [
+                  TicketCard(
+                    destiny: controller.localName,
+                    price: '\$${controller.price}',
+                  ),
                 ],
               ),
             ),

@@ -16,10 +16,22 @@ class ShipListView extends StatelessWidget {
         itemCount: controller.shipList.length,
         itemBuilder: (context, index) {
           final CardModel cardModel = controller.shipList[index];
-          return PlaceCard(
-            localName: cardModel.localName,
-            localImage: cardModel.localImage,
-            price: cardModel.price,
+          return InkWell(
+            onTap: () {
+              Get.toNamed(
+                '/initial_page/buy_ticket_page',
+                parameters: {
+                  'localName': cardModel.localName,
+                  'localImage': cardModel.localImage,
+                  'price': cardModel.price,
+                },
+              );
+            },
+            child: PlaceCard(
+              localName: cardModel.localName,
+              localImage: cardModel.localImage,
+              price: cardModel.price,
+            ),
           );
         },
       ),
