@@ -17,24 +17,24 @@ class InitialPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.only(top: 16, left: 16, right: 16),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const CustomTitle(),
-                const SearchFormField(),
-                const SizedBox(
-                  height: 16,
-                ),
-                SelectTransportTypeBar(),
-                const SizedBox(
-                  height: 8,
-                ),
-                Obx(
-                  () {
-                    return IndexedStack(
+        child: Padding(
+          padding: const EdgeInsets.only(top: 16, left: 16, right: 16),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const CustomTitle(),
+              const SearchFormField(),
+              const SizedBox(
+                height: 16,
+              ),
+              SelectTransportTypeBar(),
+              const SizedBox(
+                height: 8,
+              ),
+              Obx(
+                () {
+                  return Expanded(
+                    child: IndexedStack(
                       index: controller.getListIndex(),
                       children: [
                         PlaneListView(),
@@ -42,11 +42,11 @@ class InitialPage extends StatelessWidget {
                         TrainListView(),
                         ShipListView(),
                       ],
-                    );
-                  },
-                ),
-              ],
-            ),
+                    ),
+                  );
+                },
+              ),
+            ],
           ),
         ),
       ),
