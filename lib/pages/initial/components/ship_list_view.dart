@@ -9,32 +9,28 @@ class ShipListView extends StatelessWidget {
   final InitialController controller = Get.put(InitialController());
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: double.infinity,
-      height: 1000,
-      child: ListView.builder(
-        itemCount: controller.shipList.length,
-        itemBuilder: (context, index) {
-          final CardModel cardModel = controller.shipList[index];
-          return InkWell(
-            onTap: () {
-              Get.toNamed(
-                '/initial_page/buy_ticket_page',
-                parameters: {
-                  'localName': cardModel.localName,
-                  'localImage': cardModel.localImage,
-                  'price': cardModel.price,
-                },
-              );
-            },
-            child: PlaceCard(
-              localName: cardModel.localName,
-              localImage: cardModel.localImage,
-              price: cardModel.price,
-            ),
-          );
-        },
-      ),
+    return ListView.builder(
+      itemCount: controller.shipList.length,
+      itemBuilder: (context, index) {
+        final CardModel cardModel = controller.shipList[index];
+        return InkWell(
+          onTap: () {
+            Get.toNamed(
+              '/initial_page/buy_ticket_page',
+              parameters: {
+                'localName': cardModel.localName,
+                'localImage': cardModel.localImage,
+                'price': cardModel.price,
+              },
+            );
+          },
+          child: PlaceCard(
+            localName: cardModel.localName,
+            localImage: cardModel.localImage,
+            price: cardModel.price,
+          ),
+        );
+      },
     );
   }
 }

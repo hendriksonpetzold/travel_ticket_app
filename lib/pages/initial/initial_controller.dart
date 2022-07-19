@@ -5,26 +5,47 @@ import 'package:travel_app/domain/models/card_model.dart';
 class InitialController extends GetxController {
   List<CardModel> planeList = [
     CardModel(
-        localImage: 'assets/paris2.jpg', localName: 'Paris', price: '1500'),
+      localImage: 'assets/paris.jpg',
+      localName: 'Paris',
+      price: '1200',
+    ),
     CardModel(
-        localImage: 'assets/paris.jpg', localName: 'Paris', price: '1500'),
+      localImage: 'assets/roma.jpg',
+      localName: 'Roma',
+      price: '1300',
+    ),
     CardModel(
-        localImage: 'assets/paris2.jpg', localName: 'Paris', price: '1500'),
+      localImage: 'assets/newyork.jpg',
+      localName: 'Nova York',
+      price: '1700',
+    ),
     CardModel(
-        localImage: 'assets/paris2.jpg', localName: 'Paris', price: '1500'),
+      localImage: 'assets/rio.jpg',
+      localName: 'Rio de Janeiro',
+      price: '1000',
+    ),
   ];
 
   List<CardModel> busList = [
     CardModel(
-        localImage: 'assets/paris2.jpg', localName: 'Paris', price: '200'),
+      localImage: 'assets/newyork.jpg',
+      localName: 'NovaYork',
+      price: '400',
+    ),
   ];
   List<CardModel> trainList = [
     CardModel(
-        localImage: 'assets/paris2.jpg', localName: 'Paris', price: '300'),
+      localImage: 'assets/paris.jpg',
+      localName: 'Paris',
+      price: '600',
+    ),
   ];
   List<CardModel> shipList = [
     CardModel(
-        localImage: 'assets/paris2.jpg', localName: 'Paris', price: '500'),
+      localImage: 'assets/rio.jpg',
+      localName: 'Rio de Janeiro',
+      price: '800',
+    ),
   ];
 
   final Rx<TravelListEnum> _activeList =

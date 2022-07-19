@@ -35,7 +35,7 @@ class PlaceCard extends StatelessWidget {
               Text(
                 localName,
                 style: const TextStyle(
-                  color: Colors.black,
+                  color: Colors.white,
                   fontWeight: FontWeight.bold,
                   fontSize: 24,
                 ),
