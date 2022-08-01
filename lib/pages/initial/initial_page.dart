@@ -1,18 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:travel_app/pages/initial/components/bus_list_view.dart';
+import 'package:travel_app/pages/buy_ticket/buy_ticket_controller.dart';
+import 'package:travel_app/pages/initial/components/list_view/bus_list_view.dart';
 import 'package:travel_app/pages/initial/components/custom_title.dart';
 
-import 'package:travel_app/pages/initial/components/plane_list_view.dart';
+import 'package:travel_app/pages/initial/components/list_view/plane_list_view.dart';
 import 'package:travel_app/pages/initial/components/search_form_field.dart';
 import 'package:travel_app/pages/initial/components/select_transport_type_bar.dart';
-import 'package:travel_app/pages/initial/components/ship_list_view.dart';
-import 'package:travel_app/pages/initial/components/train_list_view.dart';
+import 'package:travel_app/pages/initial/components/list_view/ship_list_view.dart';
+import 'package:travel_app/pages/initial/components/list_view/train_list_view.dart';
 import 'package:travel_app/pages/initial/initial_controller.dart';
 
-class InitialPage extends StatelessWidget {
-  InitialPage({Key? key}) : super(key: key);
+class InitialPage extends StatefulWidget {
+  const InitialPage({Key? key}) : super(key: key);
+
+  @override
+  State<InitialPage> createState() => _InitialPageState();
+}
+
+class _InitialPageState extends State<InitialPage> {
   final InitialController controller = Get.put(InitialController());
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,7 +31,12 @@ class InitialPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const CustomTitle(),
-              const SearchFormField(),
+              SearchFormField(
+                onTap: () {
+                  controller.specificSearchCity();
+                  setState(() {});
+                },
+              ),
               const SizedBox(
                 height: 16,
               ),

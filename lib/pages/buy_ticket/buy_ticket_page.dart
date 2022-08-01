@@ -13,21 +13,24 @@ class BuyTicketPage extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          Container(
-            width: double.infinity,
-            height: MediaQuery.of(context).size.height * .3,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage(controller.localImage),
-                fit: BoxFit.cover,
+          Hero(
+            tag: controller.tag,
+            child: Container(
+              width: double.infinity,
+              height: MediaQuery.of(context).size.height * .3,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage(controller.localImage),
+                  fit: BoxFit.cover,
+                ),
               ),
-            ),
-            child: Align(
-              alignment: const Alignment(-0.9, -0.4),
-              child: CustomBackButton(
-                onTap: () {
-                  Get.back();
-                },
+              child: Align(
+                alignment: const Alignment(-0.9, -0.4),
+                child: CustomBackButton(
+                  onTap: () {
+                    Get.back();
+                  },
+                ),
               ),
             ),
           ),
@@ -44,13 +47,18 @@ class BuyTicketPage extends StatelessWidget {
                   topRight: Radius.circular(35),
                 ),
               ),
-              child: Column(
-                children: [
-                  TicketCard(
+              child: ListView.builder(
+                itemCount: 3,
+                itemBuilder: (context, index) {
+                  return TicketCard(
                     destiny: controller.localName,
                     price: '\$${controller.price}',
-                  ),
-                ],
+                    icon: IconData(
+                      int.parse(controller.icon),
+                      fontFamily: 'MaterialIcons',
+                    ),
+                  );
+                },
               ),
             ),
           ),

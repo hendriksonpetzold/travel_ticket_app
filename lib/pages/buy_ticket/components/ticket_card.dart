@@ -5,8 +5,13 @@ import 'package:travel_app/domain/utils/my_custom_cilp_path.dart';
 class TicketCard extends StatelessWidget {
   final String destiny;
   final String price;
-  const TicketCard({Key? key, required this.destiny, required this.price})
-      : super(key: key);
+  final IconData icon;
+  const TicketCard({
+    Key? key,
+    required this.destiny,
+    required this.price,
+    required this.icon,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -32,10 +37,10 @@ class TicketCard extends StatelessWidget {
                       color: Colors.red,
                     ),
                   ),
-                  const Align(
-                    alignment: Alignment(0, 1),
+                  Align(
+                    alignment: const Alignment(0, 1),
                     child: Icon(
-                      Icons.flight,
+                      icon,
                       color: Colors.red,
                     ),
                   ),

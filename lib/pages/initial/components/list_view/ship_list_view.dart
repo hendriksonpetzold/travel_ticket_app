@@ -4,15 +4,15 @@ import 'package:travel_app/domain/models/card_model.dart';
 import 'package:travel_app/pages/initial/components/place_card.dart';
 import 'package:travel_app/pages/initial/initial_controller.dart';
 
-class PlaneListView extends StatelessWidget {
-  PlaneListView({Key? key}) : super(key: key);
-  final InitialController controller = Get.put(InitialController());
+class ShipListView extends StatelessWidget {
+  ShipListView({Key? key}) : super(key: key);
+  final InitialController controller = Get.find<InitialController>();
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      itemCount: controller.planeList.length,
+      itemCount: controller.shipList.length,
       itemBuilder: (context, index) {
-        final CardModel cardModel = controller.planeList[index];
+        final CardModel cardModel = controller.shipList[index];
         return InkWell(
           onTap: () {
             Get.toNamed(
@@ -21,13 +21,18 @@ class PlaneListView extends StatelessWidget {
                 'localName': cardModel.localName,
                 'localImage': cardModel.localImage,
                 'price': cardModel.price,
+                'icon': Icons.directions_boat.codePoint.toString(),
+                'tag': 'ship$index',
               },
             );
           },
-          child: PlaceCard(
-            localName: cardModel.localName,
-            localImage: cardModel.localImage,
-            price: cardModel.price,
+          child: Hero(
+            tag: 'ship$index',
+            child: PlaceCard(
+              localName: cardModel.localName,
+              localImage: cardModel.localImage,
+              price: cardModel.price,
+            ),
           ),
         );
       },

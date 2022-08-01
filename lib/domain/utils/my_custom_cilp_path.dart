@@ -8,12 +8,13 @@ class MyCustomCilpPath extends CustomClipper<Path> {
     path.quadraticBezierTo(size.width * 0.0425000, size.height * 0.0739286,
         size.width * 0.1241667, size.height * 0.0728571);
     path.cubicTo(
-        size.width * 0.3120833,
-        size.height * 0.0721429,
-        size.width * 0.6879167,
-        size.height * 0.0707143,
-        size.width * 0.8758333,
-        size.height * 0.0700000);
+      size.width * 0.3120833,
+      size.height * 0.0721429,
+      size.width * 0.6879167,
+      size.height * 0.0707143,
+      size.width * 0.8758333,
+      size.height * 0.0700000,
+    );
     path.quadraticBezierTo(size.width * 0.9579167, size.height * 0.0725000,
         size.width * 0.9575000, size.height * 0.2114286);
     path.lineTo(size.width * 0.9583333, size.height * 0.5742857);

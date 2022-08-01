@@ -7,7 +7,7 @@ import 'package:travel_app/pages/initial/initial_controller.dart';
 class SelectTransportTypeBar extends StatelessWidget {
   SelectTransportTypeBar({Key? key}) : super(key: key);
 
-  final InitialController controller = Get.put(InitialController());
+  final InitialController controller = Get.find<InitialController>();
 
   @override
   Widget build(BuildContext context) {
