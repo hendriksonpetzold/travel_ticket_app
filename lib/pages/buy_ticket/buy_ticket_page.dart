@@ -56,10 +56,7 @@ class BuyTicketPage extends StatelessWidget {
                   return TicketCard(
                     destiny: controller.localName,
                     price: '\$${controller.price}',
-                    icon: IconData(
-                      int.parse(controller.icon),
-                      fontFamily: 'MaterialIcons',
-                    ),
+                    icon: controller.icon!,
                   );
                 },
               ),
