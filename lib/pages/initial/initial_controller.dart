@@ -1,41 +1,46 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
+
 import 'package:travel_app/domain/enums/travel_list_enum.dart';
 import 'package:travel_app/domain/models/card_model.dart';
 
 class InitialController extends GetxController {
   TextEditingController searchEditingController = TextEditingController();
-  String localName = ' ';
-  String localImage = 'assets/paris2.jpg';
-  String price = ' ';
+  RxList<CardModel> planeListSearch = RxList([]);
+  RxList<CardModel> busListSearch = RxList([]);
+  RxList<CardModel> trainListSearch = RxList([]);
+  RxList<CardModel> shipListSearch = RxList([]);
 
-  RxBool isSearch = RxBool(false);
-  RxBool listVisible = RxBool(true);
-  void searchCity(List<CardModel> list) {
-    for (var element in list) {
-      if (element.localName == searchEditingController.text) {
-        localName = element.localName;
-        localImage = element.localImage;
-        price = element.price;
-        isSearch = RxBool(true);
-        listVisible = RxBool(false);
-      }
-    }
+  void searchCity(List<CardModel> list, RxList<CardModel> searchList) {
+    List<CardModel> newList = list
+        .where((item) => item.localName.contains(searchEditingController.text))
+        .toList();
+    searchList.value = newList;
   }
 
-  void specificSearchCity() {
+  @override
+  void onInit() {
+    planeListSearch.value = planeList;
+    busListSearch.value = busList;
+    trainListSearch.value = trainList;
+    shipListSearch.value = shipList;
+
+    super.onInit();
+  }
+
+  void searchCityByTransportType() {
     switch (_activeList.value) {
       case TravelListEnum.plane:
-        searchCity(planeList);
+        searchCity(planeList, planeListSearch);
         break;
       case TravelListEnum.bus:
-        searchCity(busList);
+        searchCity(busList, busListSearch);
         break;
       case TravelListEnum.ship:
-        searchCity(shipList);
+        searchCity(shipList, shipListSearch);
         break;
       case TravelListEnum.train:
-        searchCity(trainList);
+        searchCity(trainList, trainListSearch);
         break;
       default:
     }

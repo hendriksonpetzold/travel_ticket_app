@@ -9,33 +9,35 @@ class BusListView extends StatelessWidget {
   final InitialController controller = Get.find<InitialController>();
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: controller.busList.length,
-      itemBuilder: (context, index) {
-        final CardModel cardModel = controller.busList[index];
-        return InkWell(
-          onTap: () {
-            Get.toNamed(
-              '/initial_page/buy_ticket_page',
-              parameters: {
-                'localName': cardModel.localName,
-                'localImage': cardModel.localImage,
-                'price': cardModel.price,
-                'icon': Icons.directions_bus.codePoint.toString(),
-                'tag': 'bus$index',
-              },
-            );
-          },
-          child: Hero(
-            tag: 'bus$index',
-            child: PlaceCard(
-              localName: cardModel.localName,
-              localImage: cardModel.localImage,
-              price: cardModel.price,
+    return Obx(() {
+      return ListView.builder(
+        itemCount: controller.busListSearch.length,
+        itemBuilder: (context, index) {
+          final CardModel cardModel = controller.busListSearch[index];
+          return InkWell(
+            onTap: () {
+              Get.toNamed(
+                '/initial_page/buy_ticket_page',
+                parameters: {
+                  'localName': cardModel.localName,
+                  'localImage': cardModel.localImage,
+                  'price': cardModel.price,
+                  'icon': Icons.directions_bus.codePoint.toString(),
+                  'tag': 'bus',
+                },
+              );
+            },
+            child: Hero(
+              tag: 'bus',
+              child: PlaceCard(
+                localName: cardModel.localName,
+                localImage: cardModel.localImage,
+                price: cardModel.price,
+              ),
             ),
-          ),
-        );
-      },
-    );
+          );
+        },
+      );
+    });
   }
 }

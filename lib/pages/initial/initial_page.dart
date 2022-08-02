@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:travel_app/pages/buy_ticket/buy_ticket_controller.dart';
+
 import 'package:travel_app/pages/initial/components/list_view/bus_list_view.dart';
 import 'package:travel_app/pages/initial/components/custom_title.dart';
 
@@ -31,12 +31,7 @@ class _InitialPageState extends State<InitialPage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const CustomTitle(),
-              SearchFormField(
-                onTap: () {
-                  controller.specificSearchCity();
-                  setState(() {});
-                },
-              ),
+              SearchFormField(),
               const SizedBox(
                 height: 16,
               ),
