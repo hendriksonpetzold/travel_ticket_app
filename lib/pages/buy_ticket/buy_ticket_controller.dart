@@ -3,10 +3,10 @@ import 'package:get/get.dart';
 import 'package:travel_app/domain/enums/travel_list_enum.dart';
 
 class BuyTicketController extends GetxController {
-  final String localName = Get.arguments['localName'].toString();
-  final String localImage = Get.arguments['localImage'].toString();
-  final String price = Get.arguments['price'].toString();
-  final String tag = Get.arguments['tag'].toString();
+  final String localName = Get.arguments['localName'];
+  final String localImage = Get.arguments['localImage'];
+  final String price = Get.arguments['price'];
+  final String tag = Get.arguments['tag'];
   final TravelListEnum travelListEnum = Get.arguments['enum'];
   IconData? icon;
 

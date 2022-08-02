@@ -4,10 +4,8 @@ import 'package:travel_app/components/app_button.dart';
 import 'package:travel_app/domain/enums/travel_list_enum.dart';
 import 'package:travel_app/pages/initial/initial_controller.dart';
 
-class SelectTransportTypeBar extends StatelessWidget {
-  SelectTransportTypeBar({Key? key}) : super(key: key);
-
-  final InitialController controller = Get.find<InitialController>();
+class SelectTransportTypeBar extends GetView<InitialController> {
+  const SelectTransportTypeBar({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

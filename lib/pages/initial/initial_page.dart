@@ -31,11 +31,11 @@ class _InitialPageState extends State<InitialPage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const CustomTitle(),
-              SearchFormField(),
+              const SearchFormField(),
               const SizedBox(
                 height: 16,
               ),
-              SelectTransportTypeBar(),
+              const SelectTransportTypeBar(),
               const SizedBox(
                 height: 8,
               ),
@@ -44,7 +44,7 @@ class _InitialPageState extends State<InitialPage> {
                   return Expanded(
                     child: IndexedStack(
                       index: controller.getListIndex(),
-                      children: [
+                      children: const [
                         PlaneListView(),
                         BusListView(),
                         TrainListView(),

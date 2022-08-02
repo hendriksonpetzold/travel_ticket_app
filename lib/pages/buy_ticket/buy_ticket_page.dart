@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:travel_app/components/custom_back_button.dart';
 import 'package:travel_app/pages/buy_ticket/buy_ticket_controller.dart';
-import 'package:travel_app/pages/buy_ticket/components/ticket_card.dart';
+import 'package:travel_app/components/ticket_card.dart';
 
 class BuyTicketPage extends StatelessWidget {
   BuyTicketPage({Key? key}) : super(key: key);
@@ -53,10 +53,22 @@ class BuyTicketPage extends StatelessWidget {
               child: ListView.builder(
                 itemCount: 3,
                 itemBuilder: (context, index) {
-                  return TicketCard(
-                    destiny: controller.localName,
-                    price: '\$${controller.price}',
-                    icon: controller.icon!,
+                  return InkWell(
+                    onTap: () {
+                      Get.toNamed(
+                        '/initial_page/buy_ticket_page/cart_page',
+                        arguments: {
+                          'localName': controller.localName,
+                          'price': controller.price,
+                          'icon': controller.icon,
+                        },
+                      );
+                    },
+                    child: TicketCard(
+                      destiny: controller.localName,
+                      price: '\$${controller.price}',
+                      icon: controller.icon!,
+                    ),
                   );
                 },
               ),

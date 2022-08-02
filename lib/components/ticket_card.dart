@@ -6,6 +6,7 @@ class TicketCard extends StatelessWidget {
   final String destiny;
   final String price;
   final IconData icon;
+
   const TicketCard({
     Key? key,
     required this.destiny,
