@@ -23,12 +23,12 @@ class ShipListView extends StatelessWidget {
                   'localImage': cardModel.localImage,
                   'price': cardModel.price,
                   'icon': Icons.directions_boat.codePoint.toString(),
-                  'tag': 'ship',
+                  'tag': 'ship$index',
                 },
               );
             },
             child: Hero(
-              tag: 'ship',
+              tag: 'ship$index',
               child: PlaceCard(
                 localName: cardModel.localName,
                 localImage: cardModel.localImage,

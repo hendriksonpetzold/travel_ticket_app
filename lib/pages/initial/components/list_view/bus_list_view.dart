@@ -23,12 +23,12 @@ class BusListView extends StatelessWidget {
                   'localImage': cardModel.localImage,
                   'price': cardModel.price,
                   'icon': Icons.directions_bus.codePoint.toString(),
-                  'tag': 'bus',
+                  'tag': 'bus$index',
                 },
               );
             },
             child: Hero(
-              tag: 'bus',
+              tag: 'bus$index',
               child: PlaceCard(
                 localName: cardModel.localName,
                 localImage: cardModel.localImage,

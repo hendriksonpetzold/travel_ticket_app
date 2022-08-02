@@ -24,12 +24,12 @@ class TrainListView extends StatelessWidget {
                   'localImage': cardModel.localImage,
                   'price': cardModel.price,
                   'icon': Icons.directions_subway.codePoint.toString(),
-                  'tag': 'train',
+                  'tag': 'train$index',
                 },
               );
             },
             child: Hero(
-              tag: 'train',
+              tag: 'train$index',
               child: PlaceCard(
                 localName: cardModel.localName,
                 localImage: cardModel.localImage,

@@ -37,7 +37,10 @@ class BuyTicketPage extends StatelessWidget {
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(
-              padding: const EdgeInsets.all(16),
+              padding: const EdgeInsets.only(
+                left: 16,
+                right: 16,
+              ),
               height: MediaQuery.of(context).size.height * .75,
               width: double.infinity,
               decoration: BoxDecoration(
