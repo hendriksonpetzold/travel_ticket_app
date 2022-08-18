@@ -3,5 +3,5 @@
 
 
 <p align="center">
-  <img width="460" height="300" src="assets/to_deadme/travel_app_gif.gif" >
+  <img width="460"  src="assets/to_readme/travel_app_gif.gif" >
 </p>
