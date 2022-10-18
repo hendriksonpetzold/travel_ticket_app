@@ -38,7 +38,7 @@ class OnBoardingPage extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(
-                      height: 24,
+                      height: 8,
                     ),
                     AppButton(
                       onTap: () {
@@ -46,6 +46,9 @@ class OnBoardingPage extends StatelessWidget {
                       },
                       label: 'Inscreva-se',
                       isSelected: Rx<bool>(true),
+                    ),
+                    const SizedBox(
+                      height: 8,
                     ),
                   ],
                 ),
